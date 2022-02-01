@@ -13,4 +13,13 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(2);
   });
+
+  it('displays 3 paragraphs after one is added', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.addParagraph("Hello!");
+
+    expect(document.querySelectorAll('p').length).toBe(3);
+  });
 });

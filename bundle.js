@@ -11,6 +11,11 @@
           this.mainContainerEl = document.querySelector("#main-container");
           console.log(this.mainContainerEl);
         }
+        addParagraph(text) {
+          let p = document.createElement("p");
+          p.innerText = text;
+          this.mainContainerEl.append(p);
+        }
       };
       module.exports = View2;
     }
@@ -19,4 +24,7 @@
   // index.js
   var View = require_view();
   var view = new View();
+  view.addParagraph("Some stuff here!");
+  view.addParagraph("More stuff here!");
+  view.addParagraph("Yay!");
 })();
